@@ -1,0 +1,31 @@
+dataset: 'pascal_voc_datacom'
+load_dir: "models"
+image_dir: 'datacom/VOCdevkit2007/VOC2007/JPEGImages'
+anno_dir: 'datacom/VOCdevkit2007/VOC2007/Annotations'
+set_dir: 'datacom/VOCdevkit2007/VOC2007/ImageSets/Main'
+output_dir: "evaluation/detect_output_com"
+
+checksession: 1
+checkepoch: 20
+
+#checkpoint: 149 # 10x
+#checkpoint: 148 # 20x
+checkpoint: 298 # com
+
+
+cfg: 'cfgs/res101.yml'
+net: 'res101'
+device: '2'
+cuda: False
+mGPUs: True
+cag: True  # help='whether perform class_agnostic bbox regression',
+parallel_type:  0 # help='which part of model to parallel, 0: all, 1: model before roi pooling',
+
+
+batch_size: 1
+class_agnostic: False
+vis: True
+eval: True
+# score thresh
+thresh: 0.5
+--webcam_num: -1 # help='webcam ID number'

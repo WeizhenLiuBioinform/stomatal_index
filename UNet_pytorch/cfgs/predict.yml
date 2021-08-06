@@ -1,0 +1,24 @@
+# 模型路径
+model: 'checkpoints/CP_epoch200.pth'
+# 输入
+input: 'test'
+
+DIR_GT: 'data/masks'
+# 输出文件名
+output: './output'
+# 可视化
+viz: True
+# 不保存输出
+no_save: False
+# 置信度阈值
+mask_threshold: 0.5
+# 输入大小
+inputsize: (512, 512)
+# 是否计数
+count: True
+# 是否评估
+eval: True
+
+gpus: "0"
+
+n_classes: 1

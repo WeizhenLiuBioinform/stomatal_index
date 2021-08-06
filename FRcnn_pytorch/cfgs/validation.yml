@@ -1,0 +1,40 @@
+# data dir
+DATA_DIR: '/home/zhucc/stomata_index/frcnn_pytorch/data20x'
+val_imdb_name: 'voc_2007_test'
+
+# 实验组
+exp_group: '10x_trans_20x'
+
+
+# model dir
+load_dir: "models"
+net: 'res101'
+dataset: 'pascal_voc_data10x'
+checksession: 3
+checkepoch: 30
+checkpoint: 261
+
+
+
+
+device: '3'
+set_cfgs:
+  - 'ANCHOR_SCALES'
+  - '[4, 8, 16]'
+  - 'ANCHOR_RATIOS'
+  - '[0.5,1,2]'
+  - 'MAX_NUM_GT_BOXES'
+  - '100'
+
+image_dir: 'testimages'
+output_dir: "output_transfer"
+cuda: True
+mGPUs: True
+cag: True  # help='whether perform class_agnostic bbox regression',
+parallel_type:  0 # help='which part of model to parallel, 0: all, 1: model before roi pooling',
+
+
+batch_size: 1
+class_agnostic: False
+vis: True
+--webcam_num: -1 # help='webcam ID number'
