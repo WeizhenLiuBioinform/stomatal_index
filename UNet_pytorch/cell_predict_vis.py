@@ -145,9 +145,9 @@ if __name__ == "__main__":
             print(image_name + "has been skipped")
             continue
         im_file = os.path.join(image_dir, image_name)
-        image = cv2.imread(im_file, 0)
+        image = cv2.imread(im_file, cv2.IMREAD_GRAYSCALE)
 
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        # image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         num_connected_domains, num_cells, label_cells, cell_rects = cell_count(UNet, image, device)
         cell_vis(output_dir, image_name, label_cells, cell_rects, num_cells)
 

@@ -213,6 +213,7 @@ if __name__ == '__main__':
     np.random.seed(cfg.RNG_SEED)
     cuda = torch.cuda.is_available()
     pascal_classes = np.asarray(['__background__', 'stomata'])
+    Faster_RCNN = load_faster_rcnn(load_name, cuda, pascal_classes)
     for image_name in image_list:
         if '_stoma_det' in image_name or (
                 os.path.splitext(image_name)[1] not in ['.jpg', '.jpeg', '.png', '.tif', '.bmp']):
@@ -220,5 +221,5 @@ if __name__ == '__main__':
             continue
         im_file = os.path.join(image_dir, image_name)
         image = cv2.imread(im_file)
-        num_stomata, im2show = stomata_count(load_name, image, cuda)
+        num_stomata, im2show = stomata_count(Faster_RCNN, image, cuda, pascal_classes)
         stomata_vis(output_dir, image_name, num_stomata, im2show)
