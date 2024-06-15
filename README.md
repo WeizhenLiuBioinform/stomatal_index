@@ -55,3 +55,10 @@ Change the arguments "image_dir", "frcnn_load_name" and "unet_load_name" in "sto
 python stomatal_index.py
 ```
 If you want to visualize the prediction results of stomata and cells, you can set the parameter "is_vis = True", which means that extra time will be consumed.
+
+## Citation
+If you use this code and data in a publication, please cite it as:
+
+* Zhu C, Hu Y, Mao H, Li S, Li F, Zhao C, Luo L, Liu W and Yuan X (2021) A Deep Learning-Based Method for Automatic
+  Assessment of Stomatal Index in Wheat Microscopic Images of Leaf Epidermis. Front. Plant Sci. 12:716784. doi:
+  10.3389/fpls.2021.716784
